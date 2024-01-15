@@ -23,7 +23,7 @@ function animate_string(id){
 // Set up an interval to rotate the characters in the text every 1000 milliseconds
     setInterval(function(){
     // Move the last character to the beginning of the string
-        text = text[text.length - 1] + text.subString(0, text.length - 1);
+        text = text[text.length - 1] + text.substring(0, text.length - 1);
 
     // Update the text content of the text node with the modified string
         textNode.data = text;
