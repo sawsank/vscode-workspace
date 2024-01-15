@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript basic animation</title>
+</head>
+<body onload="animate_string('target')">
+    <p  id = "target">w3resource</p>
+
+<script>
+        // Define a function that animates the characters of a string
+function animate_string(id){
+    // Get the HTML element by its id
+    var element = document.getElementById(id);
+
+ // Access the text node inside the element (assuming no other children)
+    var textNode = element.childNodes[0];
+
+ //Extract the initial text content of the text node
+    var text = textNode.data;
+
+// Set up an interval to rotate the characters in the text every 1000 milliseconds
+    setInterval(function(){
+    // Move the last character to the beginning of the string
+        text = text[text.length - 1] + text.subString(0, text.length - 1);
+
+    // Update the text content of the text node with the modified string
+        textNode.data = text;
+    }, 100);
+}
+    </script>
+</body>
+</html>
